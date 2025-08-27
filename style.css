@@ -1,0 +1,157 @@
+/* Kerala-inspired color palette and animations */
+:root {
+  --kerala-gold: #ffe066;
+  --kerala-red: #e63946;
+  --kerala-green: #a3e635;
+  --kerala-blue: #4ecdc4;
+  --kerala-pink: #f67280;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #fff5eb, #fff);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(to right, var(--kerala-gold), #fff5eb);
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: var(--kerala-red);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.art-animations {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* SVG Animations */
+.kathakali {
+  width: 120px;
+  height: 120px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.boat {
+  width: 180px;
+  height: 36px;
+}
+
+#snakeboat {
+  animation: row 4s linear infinite;
+}
+
+.pookalam {
+  width: 100px;
+  height: 100px;
+  animation: spin 20s linear infinite;
+}
+
+/* Main Content */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: var(--kerala-blue);
+  margin-top: 0;
+}
+
+/* Donation Form */
+.donate form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+donate label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 2px solid var(--kerala-gold);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--kerala-green);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to left, var(--kerala-gold), #fff5eb);
+}
+
+footer a {
+  color: var(--kerala-red);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes row {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  .art-animations { flex-direction: column; }
+  .kathakali, .boat, .pookalam { 
+    width: 80px;
+    height: 80px;
+  }
+  .boat { height: 24px; }
+}
